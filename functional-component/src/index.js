@@ -1,6 +1,14 @@
-import React, { Component } from "react";
+import React, { Component , Fragment } from "react";
 import ReactDOM from "react-dom";
-import DefaultJsxElement, { SecondJsxComponent, PureComponent } from './PureComponent'
+import { SecondJsxComponent } from './PureComponent'
+import PriceSummary from './PriceSummary'
+
+const DefaultJsxElement = (
+  <Fragment>
+    <h1> Default Pure Component is rendered. </h1>
+  </Fragment>
+);
+
 
 export default class App extends Component {
   render() {
@@ -9,8 +17,7 @@ export default class App extends Component {
         <h1>Main Component</h1>
         {DefaultJsxElement}
         {SecondJsxComponent}
-        <PureComponent />
-        {PureComponent}
+        <PriceSummary price={10} tax={2} />
       </div>
     );
   }
