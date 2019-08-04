@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, memo } from 'react'
 
-const PriceSummary = ({ price, tax }) => {
+const PriceSummary = memo(({ price, tax }) => {
+    console.log('testing');
     return (
         <Fragment>
             <div>
@@ -10,6 +11,6 @@ const PriceSummary = ({ price, tax }) => {
         </Fragment>
 
     );
-}
+})
 
 export default PriceSummary;
