@@ -15,21 +15,21 @@ const ObjectHooks = () => {
     return (
         <Fragment>
             <div>
-                <input type="text" value={appState.firstName}
+                <input type="text"
+                    value={appState.firstName}
                     onChange={(e) => { setAppState({ ...appState, firstName: e.target.value }) }} />
-
             </div>
             <div>
-                <input type="checkbox" checked={appState.isEnrolled}
+                <input type="checkbox"
+                    checked={appState.isEnrolled}
                     onChange={(e) => { setAppState({ ...appState, isEnrolled: !appState.isEnrolled }) }} >
                 </input> Change Customer Enrolled Status
             </div>
             <div>
-                <input type="button" value="Reset Customer"
+                <input type="button"
+                    value="Reset Customer"
                     onClick={(e) => { setAppState({ ...initialState }) }} />
-
             </div>
-
             <div>
                 {appState.isEnrolled.toString()}
             </div>
