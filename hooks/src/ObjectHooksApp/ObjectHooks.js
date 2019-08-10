@@ -5,7 +5,7 @@ const ObjectHooks = () => {
     const initialState = {
         firstName: 'Emma',
         lastName: 'Weikend',
-        isEnrolled: false,
+        isEnrolled: true,
         tasks: []
     }
 
