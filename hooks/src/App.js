@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from './CounterApp/Counter'
+import Counter from './PrimitiveHooksApp/Counter'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
