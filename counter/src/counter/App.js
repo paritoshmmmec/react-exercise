@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import ReduxPromise from "redux-promise";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import CounterContainer from './CounterContainer'
-import reducer from './reducers/countReducers'
+import reducer from './store/reducers'
 
 
 const store = createStore(reducer, composeWithDevTools(

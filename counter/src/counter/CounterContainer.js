@@ -1,10 +1,11 @@
 import Counter from './Counter'
 import { connect } from 'react-redux'
-import { increment, decrement } from './actions/actions';
+import { increment, decrement } from './store/actions';
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        count: state.count
+        count: state.countReducers.count
     }
 }
 
