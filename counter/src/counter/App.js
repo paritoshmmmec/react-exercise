@@ -1,24 +1,15 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import ReduxPromise from "redux-promise";
+import { composeWithDevTools } from 'redux-devtools-extension';
 import CounterContainer from './CounterContainer'
+import reducer from './reducers/countReducers'
 
-const initialState = {
-    count: 0
-};
 
-function reducer(state = initialState, action) {
-    console.log(action);
-    if (action.type === 'INCREMENT') {
-        return {
-            count: state.count + 1
-        };
-    }
-
-    return state;
-}
-
-const store = createStore(reducer);
+const store = createStore(reducer, composeWithDevTools(
+    applyMiddleware(ReduxPromise)
+));
 
 const App = () => (
     <Provider store={store}>

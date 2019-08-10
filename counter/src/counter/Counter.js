@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Counter = ({ count, increment }) => {
-    console.log(count);
+
+const Counter = ({ count, increment , decrement }) => {
     return (
         <div>
             testing {count}

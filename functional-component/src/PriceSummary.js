@@ -1,7 +1,6 @@
 import React, { Fragment, memo } from 'react'
 
 const PriceSummary = memo(({ price, tax }) => {
-    console.log('testing');
     return (
         <Fragment>
             <div>
