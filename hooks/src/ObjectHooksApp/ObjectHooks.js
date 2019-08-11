@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useReducer } from 'react'
+import React, { useState, Fragment } from 'react'
 
 const ObjectHooks = () => {
 
