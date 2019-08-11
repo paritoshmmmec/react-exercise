@@ -1,16 +1,17 @@
-import React from 'react'
 import { connect } from 'react-redux'
-
-const CounterContainer = ({ count }) => {
-    return <h1>Testing {count}</h1>
-}
+import Counter from './Counter'
 
 const mapStateToProps = (state) => {
     return { count: state.count }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        increment: () => dispatch({ type: 'INCREMENT' })
+    }
+}
 
-export default connect(mapStateToProps)(CounterContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 
 

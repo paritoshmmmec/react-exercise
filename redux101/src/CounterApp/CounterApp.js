@@ -4,17 +4,19 @@ import { Provider } from 'react-redux'
 import CounterContainer from './CounterContainer'
 
 const initialState = {
-    count: 1
+    count: 1,
+    isTabOpen: false
 }
 
-const reducer = (state = initialState, action) => {
+const countReducer = (state = initialState, action) => {
     console.log(state);
-    console.log(action);
+    if (action.type === 'INCREMENT') {
+        return { ...state, count: state.count + 1 }
+    }
     return state;
 }
 
-
-const store = createStore(reducer)
+const store = createStore(countReducer)
 
 export default class CounterApp extends Component {
     render() {
