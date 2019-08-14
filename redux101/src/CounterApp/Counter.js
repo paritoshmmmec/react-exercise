@@ -1,12 +1,14 @@
 import React from 'react'
+import NestedCounter from './NestedCounter';
 
 const Counter = ({ count, increment, getOrders }) => {
 
     return (
         <div>
-            <h1>Testing {count}</h1>
-            <button onClick={increment} > Click it</button>
-            <button onClick={getOrders} > Get Me Orders</button>
+            <h1>Parent Container</h1>
+            <NestedCounter count={count}
+                increment={increment}
+                getOrders={getOrders} />
         </div>
     )
 }
