@@ -2,9 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import store from './store/reducer'
+import worker from './web-worker/main.worker'
 
 function App() {
-  console.log(store);
+  console.log(worker);
   return (
     <div className="App">
       <header className="App-header">

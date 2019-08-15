@@ -1,9 +1,5 @@
 import { createStore } from 'redux'
 
-const actionType = {
-    SET_VISIBILITY_FILTER,
-    ADD_TODO
-}
 
 function visibilityFilter(state = 'SHOW_ALL', action) {
     console.log(action);

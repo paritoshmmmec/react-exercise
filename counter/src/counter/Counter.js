@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
 
 
-const Counter = ({ count, increment, decrement }) => {
+const Counter = ({ count, incrementCounter, decrementCounter }) => {
     return (
         <Fragment>
             testing {count}
             <div>
-                <input type="button" onClick={increment} value="Up" />
+                <input type="button" onClick={() => incrementCounter(1)} value="Up" />
             </div>
             <div>
-                <input type="button" onClick={decrement} value="Down" />
+                <input type="button" onClick={() => decrementCounter(1)} value="Down" />
             </div>
         </Fragment>
     );

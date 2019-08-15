@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from "redux-promise";
 import { composeWithDevTools } from 'redux-devtools-extension';
-import reducer from './reducers'
+import countReducers from './countReducers'
 
-const store = createStore(reducer, composeWithDevTools(
+const store = createStore(countReducers, composeWithDevTools(
     applyMiddleware(ReduxPromise)
 ));
 
