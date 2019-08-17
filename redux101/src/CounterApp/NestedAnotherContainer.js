@@ -1,7 +1,6 @@
 import React from 'react'
 
 const NestedAnotherContainer = ({ count, increment, fetchPosts }) => {
-
     return (
         <div>
             <h1>Testing {count}</h1>
