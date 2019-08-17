@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch'
+
 import {
     INCREMENT_COUNTER,
     FETCH_ORDERS,
@@ -35,7 +35,7 @@ function receivePosts(posts) {
 
 
 export const fetchPosts = () => {
-    return dispatch => {
+    return (dispatch, _, { fetch }) => {
         dispatch(requestPosts())
         return fetch(`https://my-json-server.typicode.com/typicode/demo/comments`)
             .then(response => response.json())

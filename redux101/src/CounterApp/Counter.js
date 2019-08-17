@@ -2,8 +2,6 @@ import React from 'react'
 import NestedAnotherContainer from './NestedAnotherContainer';
 
 const Counter = ({ count, incrementCounter, fetchPosts, posts }) => {
-    console.log(fetchPosts)
-    console.log(incrementCounter)
     return (
         <div>
             <h1>Parent Container</h1>

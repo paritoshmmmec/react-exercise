@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk';
 import CounterContainer from './CounterContainer'
 import { INCREMENT_COUNTER, RECEIVE_POSTS } from './actions/actionTypes'
-
+import fetch from 'cross-fetch'
 
 
 const initialState = {
@@ -34,7 +34,7 @@ const countReducer = (state = initialState, action) => {
 
 const store = createStore(combineReducers({
     countReducer
-}), applyMiddleware(thunkMiddleware, loggingMiddleware))
+}), applyMiddleware(thunkMiddleware.withExtraArgument({ fetch }), loggingMiddleware))
 
 export default class CounterApp extends Component {
     render() {
