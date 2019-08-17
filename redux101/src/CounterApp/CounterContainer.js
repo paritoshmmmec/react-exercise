@@ -1,14 +1,18 @@
 import { connect } from 'react-redux'
 import Counter from './Counter'
-import { incrementCounter } from './actions/actions'
+import { incrementCounter, fetchPosts } from './actions/actions'
 
 
 const mapStateToProps = (state) => {
-    return { count: state.countReducer.count }
+    return {
+        count: state.countReducer.count,
+        posts: state.countReducer.posts
+    }
 }
 
 const mapDispatchToProps = {
-    incrementCounter: incrementCounter
+    incrementCounter: incrementCounter,
+    fetchPosts: fetchPosts
 }
 
 

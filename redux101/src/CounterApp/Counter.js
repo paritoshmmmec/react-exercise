@@ -1,18 +1,16 @@
 import React from 'react'
-import NestedCounter from './NestedCounter';
 import NestedAnotherContainer from './NestedAnotherContainer';
 
-const Counter = ({ count, incrementCounter, getOrders }) => {
-    console.log(incrementCounter);
+const Counter = ({ count, incrementCounter, fetchPosts, posts }) => {
     return (
         <div>
             <h1>Parent Container</h1>
-            <NestedAnotherContainer count={count}
+            <NestedAnotherContainer fetchPosts={fetchPosts} count={count}
                 increment={() => incrementCounter(1)}
             />
-            {/* <NestedCounter count={count}
-                increment={increment}
-                getOrders={getOrders} /> */}
+            {posts.map((post) =>
+                <h1 key={post.id}>{post.body}</h1>
+            )}
         </div>
     )
 }
