@@ -1,26 +1,12 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import { INCREMENT_COUNTER, RECEIVE_POSTS } from '../constants/actionTypes'
-import { fetchPostService } from './services/postService'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+//import { composeWithDevTools } from 'redux-devtools-extension'
+//import monitorReducersEnhancer from './enhancers/monitorReducers'
+//import loggerMiddleware from './middleware/logger'
+import { counter } from './reducers'
 
-const loggingMiddleware = (store) => (next) => (action) => {
-    next(action);
-}
-
-const countReducer = (state = null, action) => {
-    if (action.type === INCREMENT_COUNTER) {
-        return { ...state, count: state.count + 1 }
-    }
-
-    if (action.type === RECEIVE_POSTS) {
-        console.log(action);
-        return { ...state, posts: action.posts };
-    }
-
-    return state;
-}
 const initialState = {
-    countReducer: {
+    counter: {
         count: 20,
         isTabOpen: false,
         posts: []
@@ -28,15 +14,8 @@ const initialState = {
 };
 
 
-const rootReducer = combineReducers({
-    countReducer
-});
+export default function configureStore() {
+    const store = createStore(combineReducers({ counter }), initialState)
 
-
-const store = createStore(rootReducer,
-    initialState,
-    applyMiddleware(thunkMiddleware.withExtraArgument({ fetchPostService }),
-        loggingMiddleware))
-
-
-export default store
+    return store
+}
