@@ -35,10 +35,9 @@ function receivePosts(posts) {
 
 
 export const fetchPosts = () => {
-    return (dispatch, _, { fetch }) => {
+    return (dispatch, _, { fetchPostService }) => {
         dispatch(requestPosts())
-        return fetch(`https://my-json-server.typicode.com/typicode/demo/comments`)
-            .then(response => response.json())
+        return fetchPostService()
             .then(json => dispatch(receivePosts(json)))
     }
 }
