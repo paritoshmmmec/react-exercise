@@ -10,7 +10,7 @@ const loggingMiddleware = (store) => (next) => (action) => {
     next(action);
 }
 
-const countReducer = (state = {}, action) => {
+const countReducer = (state = null, action) => {
     if (action.type === INCREMENT_COUNTER) {
         return { ...state, count: state.count + 1 }
     }
