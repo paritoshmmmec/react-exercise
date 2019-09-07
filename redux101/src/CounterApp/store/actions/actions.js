@@ -4,7 +4,7 @@ import {
     FETCH_ORDERS,
     REQUEST_POSTS,
     RECEIVE_POSTS
-} from '../../constants/actionTypes'
+} from './actionTypes'
 
 export const incrementCounter = (count) => {
     return {
